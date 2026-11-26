@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aloqa va ariza — PRAVA_UZ Ishtixon</title>
+  <meta name="description" content="PRAVA_UZ Ishtixon bilan bog'laning: ariza qoldiring, Telegram va Instagram orqali yozing.">
+  <link rel="icon" href="logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Unbounded:wght@600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="site-header"></div>
+<section class="page-head"><div class="container"><h1>Aloqa va ariza</h1><p>Formani to'ldiring — Telegram ochiladi va xabaringiz adminga tayyor holda yuboriladi.</p></div></section>
+<main class="section">
+  <div class="container contact-grid">
+    <div class="info-box reveal" id="infoBox">
+      <div class="info"><div class="i">✈️</div><div><b>Telegram (admin)</b><a href="#" data-tg>@Farxod2626</a></div></div>
+      <div class="info"><div class="i">📸</div><div><b>Instagram</b><a href="#" data-ig>@pravauz_ishtixon</a></div></div>
+      <div class="info" id="phoneBox" hidden><div class="i">📞</div><div><b>Telefon</b><a id="phoneLink" href="#"></a></div></div>
+      <div class="info"><div class="i">📍</div><div><b>Manzil</b><span id="addrText">Ishtixon tumani, Samarqand viloyati</span></div></div>
+      <div class="info" id="hoursBox" hidden><div class="i">🕒</div><div><b>Ish vaqti</b><span id="hoursText"></span></div></div>
+    </div>
+    <form class="form reveal" id="leadForm" novalidate>
+      <h3>Ariza qoldirish</h3>
+      <label>Ismingiz<input type="text" id="name" placeholder="Ism familiya" required></label>
+      <label>Telefon raqamingiz<input type="tel" id="phone" placeholder="+998 90 123 45 67" required></label>
+      <label>Toifa<select id="course"></select></label>
+      <p class="error" id="formError" hidden></p>
+      <button type="submit" class="btn btn-red btn-block">Telegram orqali yuborish</button>
+    </form>
+  </div>
+</main>
+<div id="site-footer"></div>
+<script src="script.js"></script>
+<script>
+  if (CONFIG.phone) { $("#phoneBox").hidden = false; const a = $("#phoneLink"); a.textContent = CONFIG.phone; a.href = "tel:" + CONFIG.phone.replace(/[^+\d]/g, ""); }
+  if (CONFIG.address) $("#addrText").textContent = CONFIG.address;
+  if (CONFIG.hours) { $("#hoursBox").hidden = false; $("#hoursText").textContent = CONFIG.hours; }
+</script>
+</body>
+</html>
